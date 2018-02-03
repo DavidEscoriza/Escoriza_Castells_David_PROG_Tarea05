@@ -61,4 +61,8 @@ public class Turismo {
         this.disponible=disponible;
     }
     
+    public String toString(){
+        return "Matrícula: "+matricula+"\nMarca: "+marca+"\nModelo: "+modelo+"\nCilindrada: "+cilindrada+"\n"+(disponible ? "Disponible":"No disponible");
+    }
+    
 }
