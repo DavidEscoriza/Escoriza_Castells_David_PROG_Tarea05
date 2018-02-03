@@ -62,7 +62,7 @@ public class Turismo {
     }
     
     public String toString(){
-        return "Matrícula: "+matricula+"\nMarca: "+marca+"\nModelo: "+modelo+"\nCilindrada: "+cilindrada+"\n"+(disponible ? "Disponible":"No disponible");
+        return "Matrícula: "+matricula+"\nMarca: "+marca+"\nModelo: "+modelo+"\nCilindrada: "+cilindrada+"\n"+(disponible ? "Disponible":"No disponible"+"\n----------------");
     }
     
 }

@@ -57,5 +57,8 @@ public class Alquiler {
         return dias*PRECIO_DIA+turismo.getCilindrada()/100;
     }
     
+    public String toString(){
+        return "DNI cliente: "+cliente.getDni()+"\nMatricula vehiculo: "+turismo.getMatricula()+"\nFecha de alquier: "+fecha+"\nDías: "+dias+"\nPrecio"+getPrecio()+"\n--------------------";
+    }
     
 }
