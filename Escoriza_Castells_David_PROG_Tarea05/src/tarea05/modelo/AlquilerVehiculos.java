@@ -152,8 +152,24 @@ public class AlquilerVehiculos {
                 throw new ExcepcionAlquilerVehiculos("El turismo no está disponible.");
         else
             throw new ExcepcionAlquilerVehiculos("No pueden abrirse más alquileres.");
-            
     }
     
+    public void closeAlquiler(Cliente cliente, Turismo turismo){
+        int posicionAlquiler = 0;
+        boolean alquilerEncontrado = false;
+        while (posicionAlquiler < alquileres.length && !alquilerEncontrado){
+            if (alquileres[posicionAlquiler].getCliente() == cliente && alquileres[posicionAlquiler].getTurismo()==turismo)
+                alquilerEncontrado=true;
+            else
+                posicionAlquiler++;
+        }
+        if (alquilerEncontrado) {
+            for (int i=posicionAlquiler; i < alquileres.length - 1; i++){
+                alquileres[i]=alquileres[i+1];
+            }
+            alquileres[alquileres.length-1]=null;
+        } else
+            throw new ExcepcionAlquilerVehiculos("No existe dicho alquiler.");
+    }
     
 }
