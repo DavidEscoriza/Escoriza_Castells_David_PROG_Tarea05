@@ -41,6 +41,17 @@ public class Alquiler {
         return dias;
     }
     
+    public void close(){
+        Date ahora = new Date();
+	dias = difDias(fecha, ahora);
+	turismo.setDisponible(true);
+    }
+    
+    private int difDias(Date fechaInicio, Date fechaFin){
+        long milisegundos = fechaFin.getTime() - fechaInicio.getTime();
+	long diasAlquilado = milisegundos / MS_DIA;
+	return (int) diasAlquilado + 1;
+    }
     
     
     
