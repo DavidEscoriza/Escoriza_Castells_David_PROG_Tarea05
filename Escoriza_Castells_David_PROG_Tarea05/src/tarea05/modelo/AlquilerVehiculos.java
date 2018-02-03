@@ -45,5 +45,28 @@ public class AlquilerVehiculos {
         else 
             return null;
     }
+    
+    public void addCliente(Cliente cliente){
+        int posicion = 0;
+	boolean posicionEncontrada = false;
+	while (posicion < clientes.length && !posicionEncontrada) {
+		if (clientes[posicion] == null)
+			posicionEncontrada = true;
+		else
+			if (clientes[posicion].getDni().equals(cliente.getDni()))
+				throw new ExcepcionAlquilerVehiculos("Ya existe un cliente con ese DNI.");
+			else
+				posicion++;
+	}
+	if (posicionEncontrada)
+		clientes[posicion] = cliente;
+	else
+		throw new ExcepcionAlquilerVehiculos("No pueden añadirse más clientes.");
+	}
 
+    
+    
+    
+    
+    
 }
