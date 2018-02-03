@@ -80,4 +80,8 @@ public class Cliente {
     public static int getNumClientes() {
         return numClientes;
     }
+    
+    public String toString(){
+        return "Nombre: "+nombre+"\nDNI: "+dni+"\nTelefono: "+telefono+"\nDirección: "+direccion+"\nLocalidad: "+localidad+"\nCódigo postal: "+codigoPostal+"\nIdentificador: "+identificador+"\n--------------------";
+    }
 }
