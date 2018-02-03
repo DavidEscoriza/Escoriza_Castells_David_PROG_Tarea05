@@ -117,8 +117,43 @@ public class AlquilerVehiculos {
 		throw new ExcepcionAlquilerVehiculos("No pueden añadirse más turismos.");
 	}
     
+    public void delTurismo(String matricula){
+        int posicion = 0;
+        boolean encontrado = false;
+        while (posicion < turismos.length && !encontrado){
+            if (turismos[posicion] != null && turismos[posicion].getMatricula().equals(matricula))
+                encontrado=true;
+            else
+                posicion++;
+        }
+        if (encontrado){
+            for (int i=posicion; i < turismos.length - 1; i++){
+                turismos[i]=turismos[i+1];
+            }
+            turismos [turismos.length - 1] = null;
+        }
+        else
+            throw new ExcepcionAlquilerVehiculos ("No existe el turismo.");
+    }
     
-    
+    public void openAlquiler(Cliente cliente, Turismo turismo){
+        int posicionAlquiler = 0;
+        boolean alquilerEncontrado = false;
+        while (posicionAlquiler < alquileres.length && !alquilerEncontrado){
+            if (alquileres[posicionAlquiler]==null)
+                alquilerEncontrado=true;
+            else
+                posicionAlquiler++;
+        }
+        if (alquilerEncontrado)
+            if (turismo.getDisponible())
+                alquileres[posicionAlquiler]=new Alquiler(cliente, turismo);
+            else
+                throw new ExcepcionAlquilerVehiculos("El turismo no está disponible.");
+        else
+            throw new ExcepcionAlquilerVehiculos("No pueden abrirse más alquileres.");
+            
+    }
     
     
 }
