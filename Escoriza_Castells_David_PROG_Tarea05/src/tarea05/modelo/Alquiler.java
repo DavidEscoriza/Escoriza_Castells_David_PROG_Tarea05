@@ -23,8 +23,24 @@ public class Alquiler {
         fecha=new Date();
         dias=0;
         turismo.setDisponible(false);
-        
     }
+    
+    public Cliente getCliente(){
+        return cliente;
+    }
+    
+    public Turismo getTurismo(){
+        return turismo;
+    }
+    
+    public Date getFecha(){
+        return fecha;
+    }
+    
+    public int getDias(){
+        return dias;
+    }
+    
     
     
     
