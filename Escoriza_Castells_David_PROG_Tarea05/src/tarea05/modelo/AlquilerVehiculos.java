@@ -19,7 +19,17 @@ public class AlquilerVehiculos {
 	alquileres = new Alquiler[MAX_ALQUILERES];
     }
     
-    
+    public Cliente[] getClientes() {
+	return clientes;
+    }
+	
+    public Turismo[] getVehiculos() {
+	return turismos;
+    }
+	
+    public Alquiler[] getTrabajos() {
+	return alquileres;
+    }
 
 
 
