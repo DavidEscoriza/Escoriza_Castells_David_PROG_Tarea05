@@ -7,8 +7,7 @@ public class Cliente {
     private String nombre, dni, telefono, direccion, localidad, codigoPostal;
     private int identificador;
     private static int numClientes=0;
-    
-    
+   
     public Cliente(String nombre, String dni, String telefono, String direccion, String localidad, String codigoPostal){
         this.nombre=nombre;
         if (!compruebaDni(dni))
@@ -48,5 +47,37 @@ public class Cliente {
         
     m=p.matcher(codigoPostal);
     return m.matches();
+    }
+    
+        public String getNombre() {
+        return nombre;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getLocalidad() {
+        return localidad;
+    }
+
+    public String getCodigoPostal() {
+        return codigoPostal;
+    }
+
+    public int getIdentificador() {
+        return identificador;
+    }
+
+    public static int getNumClientes() {
+        return numClientes;
     }
 }
