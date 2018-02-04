@@ -21,6 +21,7 @@ public class Turismo {
         if (cilindrada<=0)
             throw new ExcepcionAlquilerVehiculos ("La cilindrada debe ser mayor que 0.");
         this.cilindrada=cilindrada;
+        disponible=true;
     }
     
     public Turismo(Turismo otroTurismo){

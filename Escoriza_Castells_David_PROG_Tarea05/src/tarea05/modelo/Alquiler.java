@@ -58,7 +58,7 @@ public class Alquiler {
     }
     
     public String toString(){
-        return "DNI cliente: "+cliente.getDni()+"\nMatricula vehiculo: "+turismo.getMatricula()+"\nFecha de alquier: "+fecha+"\nDías: "+dias+"\nPrecio"+getPrecio()+"\n--------------------";
+        return "DNI cliente: "+cliente.getDni()+"\nMatricula vehiculo: "+turismo.getMatricula()+"\nFecha de alquier: "+FORMATO_FECHA.format(fecha)+"\nDías: "+dias+"\nPrecio"+getPrecio()+"\n--------------------";
     }
     
 }
